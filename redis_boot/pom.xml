@@ -7,30 +7,52 @@
         <artifactId>mall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>mall</groupId>
-    <artifactId>mall-tiny</artifactId>
+    <groupId>mall_redis</groupId>
+    <artifactId>redis_boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mall-tiny</name>
+    <name>redis_boot</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!--redis依赖配置-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>io.lettuce</groupId>-->
+<!--                    <artifactId>lettuce-core</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
         </dependency>
+
+        <!--使用lettuce时，需要额外引入commons-pool2依赖包-->
+<!--        Spring Boot 从 2.0 版本开始，spring-boot-starter-data-redis 将 Redis 的默认 Jedis 客户端替换成了 Lettuce 客户端。-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
