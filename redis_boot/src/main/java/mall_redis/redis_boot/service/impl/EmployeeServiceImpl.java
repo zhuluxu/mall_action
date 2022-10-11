@@ -15,6 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     @Cacheable(cacheNames = "empls", keyGenerator = "myKeyGenerator")
     public Employee getEmployeeById(Long id) {
-        return new Employee(id);
+        return new Employee(id,"name");
     }
 }

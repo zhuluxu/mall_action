@@ -2,6 +2,7 @@ package mall_redis.redis_boot.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author zhuluxu
@@ -9,6 +10,9 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
     private Long id;
+    public String name;
+    private final String nameFinal = "final";
 }
